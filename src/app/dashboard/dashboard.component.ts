@@ -11,16 +11,14 @@ import { CardComponent } from '../shared/card/card.component';
 export class DashboardComponent {
   public imagePath = 'assets/images/profile_pic.png';
   public personalDetails = [
-    { title: 'Name', value: 'AKASH SINGH' },
-    { title: 'Email', value: 'AKASHBTW@GMAIL.COM' },
+    { title: 'Email', value: 'akashbtw@gmail.com' },
     { title: 'Phone', value: '+91-7249364916' },
-    { title: 'Designation', value: 'Senior Frontend Developer' },
   ];
   public myDetails = [
     {
       heading: 'About Me',
       description:
-        'I am a software developer with a passion for creating innovative solutions. I have experience in various programming languages and frameworks, and I enjoy working on challenging projects that allow me to grow my skills and knowledge.',
+        'As an accomplished frontend developer with 8+ years of experience and a strong foundation in Angular and ReactJS, I specialize in crafting dynamic, responsive, and user-centred web applications. With extensive experience in using TailwindCSS, SCSS, CSS3, and HTML5, I deliver high-quality, maintainable, and scalable code. My expertise in JavaScript and Node.js further enables me to build seamless, full-stack applications, while adhering to modern development standards and best practices.',
 
       config: {
         backgroundColor: '',

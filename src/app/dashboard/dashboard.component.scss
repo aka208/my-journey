@@ -1,4 +1,6 @@
 .dashboard-container {
+  margin: 0;
+  min-height: 100vh;
   padding: 16px;
   display: flex;
   flex-direction: column;
@@ -6,7 +8,7 @@
   row-gap: 20px;
   column-gap: 20px;
   background-color: #202020;
-  height: 97.3vh;
+  overflow: auto;
 }
 .dashboard-layout {
   display: flex;
@@ -20,10 +22,12 @@
   display: flex;
   flex-direction: row;
   flex-wrap: wrap;
+  justify-content: center;
+  align-items: stretch;
   column-gap: 16px;
   row-gap: 16px;
-  width: 85%;
-  height: -webkit-fill-avalable;
+  width: 100%;
+  height: -webkit-fill-available;
 }
 .details-section {
   padding: 20px;
@@ -35,15 +39,15 @@
   height: -webkit-fill-available;
   //   width: 15%;
   background-color: transparent;
-  box-shadow:
-    0 0 1px #00f7ff,
-    0 0 2px #00f7ff,
-    0 0 3px #00f7ff,
-    0 0 4px #00f7ff;
+  // box-shadow:
+  //   0 0 1px #00f7ff,
+  //   0 0 2px #00f7ff,
+  //   0 0 3px #00f7ff,
+  //   0 0 4px #00f7ff;
 }
 .journey-image {
-  width: 150px;
-  height: 150px;
+  width: 200px;
+  height: 200px;
   display: flex;
   font-weight: bolder;
   justify-content: center;
@@ -56,6 +60,11 @@
     0 0 15px #99fafd,
     0 0 20px #6ca0a1,
     0 0 30px #395e5f;
+}
+.journey-image img {
+  width: 200px;
+  height: 200px;
+  border-radius: 50%;
 }
 .details {
   width: 100%;
@@ -72,4 +81,19 @@
 .card {
   flex: 1;
   min-width: 350px;
+}
+.profile-heading {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  font-size: larger;
+  color: rgb(201, 201, 201);
+  line-height: 1.5;
+  .name {
+    font-weight: bolder;
+  }
+  .title {
+    font-weight: 500;
+  }
 }

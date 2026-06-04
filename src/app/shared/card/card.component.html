@@ -1,6 +1,46 @@
 <div class="card-container">
   <div class="card-header">{{ detail.heading }}</div>
   <div class="card-body">
-    <p>{{ detail.description }}</p>
+    @if (detail.heading === "About Me") {
+      <p>{{ detail.description }}</p>
+    }
+    @if (detail.heading === "Career") {
+      <ng-container
+        *ngTemplateOutlet="career; context: { description: detail.description }"
+      ></ng-container>
+    }
+    @if (detail.heading === "Skills") {
+      <ng-container
+        *ngTemplateOutlet="skills; context: { description: detail.description }"
+      ></ng-container>
+    }
+    @if (detail.heading === "Hobbies") {
+      <ng-container
+        *ngTemplateOutlet="
+          hobbies;
+          context: { description: detail.description }
+        "
+      ></ng-container>
+    }
+    @if (detail.heading === "Education") {
+      <ng-container
+        *ngTemplateOutlet="
+          education;
+          context: { description: detail.description }
+        "
+      ></ng-container>
+    }
   </div>
+  <ng-template #career let-description="description">
+    {{ description }}
+  </ng-template>
+  <ng-template #skills let-description="description">{{
+    description
+  }}</ng-template>
+  <ng-template #hobbies let-description="description">{{
+    description
+  }}</ng-template>
+  <ng-template #education let-description="description">{{
+    description
+  }}</ng-template>
 </div>
