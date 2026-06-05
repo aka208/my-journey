@@ -100,13 +100,13 @@
 .tech-images-container {
   display: flex;
   flex-direction: row;
-  justify-content: space-between;
+  justify-content: center;
+  align-items: center;
   row-gap: 20px;
   column-gap: 20px;
-
   img {
-    width: 100px;
-    height: 100px;
+    width: 10%;
+    height: 10%;
     border-radius: 10px;
     box-shadow:
       0 0 10px #abedf0,
