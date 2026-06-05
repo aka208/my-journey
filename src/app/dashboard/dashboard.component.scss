@@ -118,3 +118,14 @@
       0 0 10px #395e5f;
   }
 }
+.contact-container {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  column-gap: 20px;
+  justify-content: center;
+  align-items: center;
+  div {
+    width: fit-content;
+  }
+}
