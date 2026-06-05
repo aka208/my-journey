@@ -1,6 +1,7 @@
 /* You can add global styles to this file, and also import other style files */
 * {
   font-family: "Arial", sans-serif;
+  font-size: clamp(0.9rem, 0.8vw, 1.5rem) !important;
   margin: 0;
   padding: 0;
 }
