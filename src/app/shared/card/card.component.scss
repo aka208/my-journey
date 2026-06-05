@@ -40,10 +40,49 @@
 }
 .card-body {
   line-height: 1.5;
-  color: whitesmoke;
+  color: rgb(201, 201, 201);
   font-size: large;
   padding: 16px;
-  // border-radius: 4px;
   border-top: 1px solid #585858;
   font-weight: 500;
+}
+.item-container {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+  padding: 10px;
+  margin: 10px;
+  border-bottom: 1px solid #585858;
+}
+.item-container-header {
+  font-weight: bold;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+  padding: 10px;
+  margin: 10px;
+  border-bottom: 1px solid hsl(0, 0%, 35%);
+}
+.first-cell {
+  width: 50%;
+}
+.second-cell {
+  width: 35%;
+}
+.third-cell {
+  width: 20px;
+  height: 20px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+  border-radius: 50%;
+
+  &:hover {
+    transform: scale(1.2);
+    transition: cubic-bezier(0.075, 0.82, 0.165, 1) 1s;
+    background-color: #585858;
+  }
 }

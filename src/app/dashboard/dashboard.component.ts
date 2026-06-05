@@ -26,16 +26,26 @@ export class DashboardComponent {
     },
     {
       heading: 'Career',
-      description:
-        'I have worked on a variety of projects, ranging from small applications to large-scale enterprise solutions. I have experience in both frontend and backend development, and I am always eager to take on new challenges and learn new technologies.',
+      description: [
+        { organization: 'TCS', role: 'System Engineer' },
+        { organization: 'Cognizant', role: 'Project Associate' },
+        { organization: 'CitiusTech', role: 'Technical Lead' },
+        { organization: 'MGSC Inc.', role: 'Technical Lead' },
+        { organization: 'Ascendion', role: 'Lead Engineer' },
+      ],
       config: {
         backgroundColor: '',
       },
     },
     {
       heading: 'Skills',
-      description:
-        'I have expertise in JavaScript, TypeScript, Angular, React, Node.js, and Python. I am also proficient in database management, version control systems, and agile methodologies.',
+      description: [
+        { technology: 'Angular', rating: [1, 2, 3, 4, 5] },
+        { technology: 'Typescript', rating: [1, 2, 3, 4, 5] },
+        { technology: 'JavaScript', rating: [1, 2, 3, 4, 5] },
+        { technology: 'NodeJs', rating: [1, 2, 3, 4] },
+        { technology: 'RxJs', rating: [1, 2, 3, 4, 5] },
+      ],
       config: {
         backgroundColor: '',
       },
@@ -48,13 +58,13 @@ export class DashboardComponent {
         backgroundColor: '',
       },
     },
-    {
-      heading: 'Hobbies',
-      description:
-        'In my free time, I enjoy hiking, traveling, and exploring new cuisines. I also have a passion for photography and often spend weekends capturing moments in nature.',
-      config: {
-        backgroundColor: '',
-      },
-    },
+    // {
+    //   heading: 'Hobbies',
+    //   description:
+    //     'In my free time, I enjoy hiking, traveling, and exploring new cuisines. I also have a passion for photography and often spend weekends capturing moments in nature.',
+    //   config: {
+    //     backgroundColor: '',
+    //   },
+    // },
   ];
 }

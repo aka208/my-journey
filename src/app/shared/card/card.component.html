@@ -32,11 +32,37 @@
     }
   </div>
   <ng-template #career let-description="description">
-    {{ description }}
+    <div class="item-container-header">
+      <div class="first-cell">Organization</div>
+      <div class="second-cell">Role</div>
+      <div class="third-cell"></div>
+    </div>
+    @for (item of description; track item) {
+      <div class="item-container">
+        <div class="first-cell">{{ item.organization }}</div>
+        <div class="second-cell">{{ item.role }}</div>
+        <div class="third-cell" (click)="showDetails()"><strong>+</strong></div>
+      </div>
+    }
   </ng-template>
-  <ng-template #skills let-description="description">{{
-    description
-  }}</ng-template>
+  <ng-template #skills let-description="description">
+    <div class="item-container-header">
+      <div class="first-cell">Technology</div>
+      <div class="second-cell">Rating</div>
+    </div>
+    @for (item of description; track item) {
+      <div class="item-container">
+        <div class="first-cell">{{ item.technology }}</div>
+        <div class="second-cell">
+          @for (i of item.rating; track i) {
+            <span class="review-star" style="font-size: 20px; color: gold"
+              >★</span
+            >
+          }
+        </div>
+      </div>
+    }
+  </ng-template>
   <ng-template #hobbies let-description="description">{{
     description
   }}</ng-template>
