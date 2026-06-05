@@ -10,5 +10,11 @@ import { Component, Input } from '@angular/core';
 })
 export class CardComponent {
   @Input() detail: any;
-  showDetails() {}
+
+  public selectedRowTitle!: string | null;
+
+  showDetails(organization: string) {
+    this.selectedRowTitle =
+      this.selectedRowTitle !== organization ? organization : null;
+  }
 }

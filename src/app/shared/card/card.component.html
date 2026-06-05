@@ -2,7 +2,9 @@
   <div class="card-header">{{ detail.heading }}</div>
   <div class="card-body">
     @if (detail.heading === "About Me") {
-      <p>{{ detail.description }}</p>
+      <ng-container
+        *ngTemplateOutlet="about; context: { description: detail.description }"
+      ></ng-container>
     }
     @if (detail.heading === "Career") {
       <ng-container
@@ -14,14 +16,6 @@
         *ngTemplateOutlet="skills; context: { description: detail.description }"
       ></ng-container>
     }
-    @if (detail.heading === "Hobbies") {
-      <ng-container
-        *ngTemplateOutlet="
-          hobbies;
-          context: { description: detail.description }
-        "
-      ></ng-container>
-    }
     @if (detail.heading === "Education") {
       <ng-container
         *ngTemplateOutlet="
@@ -31,6 +25,14 @@
       ></ng-container>
     }
   </div>
+  <ng-template #about let-description="description">
+    @for (item of description; track item) {
+      <div class="about-container">
+        <div class="first-cell">{{ item.title }}</div>
+        <div class="second-cell">{{ item.value }}</div>
+      </div>
+    }
+  </ng-template>
   <ng-template #career let-description="description">
     <div class="item-container-header">
       <div class="first-cell">Organization</div>
@@ -41,8 +43,21 @@
       <div class="item-container">
         <div class="first-cell">{{ item.organization }}</div>
         <div class="second-cell">{{ item.role }}</div>
-        <div class="third-cell" (click)="showDetails()"><strong>+</strong></div>
+        <div class="third-cell" (click)="showDetails(item.organization)">
+          @if (selectedRowTitle !== item.organization) {
+            <strong>+</strong>
+          } @else {
+            <strong>-</strong>
+          }
+        </div>
       </div>
+      @if (selectedRowTitle === item.organization) {
+        <div class="details-container">
+          <ng-container
+            *ngTemplateOutlet="details; context: { details: item.details }"
+          ></ng-container>
+        </div>
+      }
     }
   </ng-template>
   <ng-template #skills let-description="description">
@@ -63,10 +78,36 @@
       </div>
     }
   </ng-template>
-  <ng-template #hobbies let-description="description">{{
-    description
-  }}</ng-template>
-  <ng-template #education let-description="description">{{
-    description
-  }}</ng-template>
+  <ng-template #education let-description="description">
+    <div class="item-container-header">
+      <div class="first-cell">Degree</div>
+      <div class="second-cell">Score</div>
+    </div>
+    @for (item of description; track item) {
+      <div class="item-container">
+        <div class="first-cell">{{ item.degree }}</div>
+        <div class="second-cell">
+          {{ item["percentage/cgpa"] }}
+        </div>
+      </div>
+    }
+  </ng-template>
+  <ng-template #details let-details="details">
+    @for (detail of details; track detail) {
+      <div>
+        <strong>{{ detail.title }}</strong>
+      </div>
+      @if (detail.title === "Roles & Responsibilities") {
+        <div>
+          <ul>
+            @for (resp of detail.value; track resp) {
+              <li>{{ resp }}</li>
+            }
+          </ul>
+        </div>
+      } @else {
+        <div>{{ detail.value }}</div>
+      }
+    }
+  </ng-template>
 </div>

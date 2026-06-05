@@ -86,3 +86,22 @@
     background-color: #585858;
   }
 }
+.details-container {
+  padding: 20px;
+  height: auto;
+  width: 100%;
+}
+.about-container {
+  display: flex;
+  column-gap: 20px;
+  padding: 20px;
+  &:not(:first-child) {
+    border-top: 1px solid #585858;
+  }
+  .first-cell {
+    width: 30%;
+  }
+  .second-cell {
+    width: 60%;
+  }
+}
